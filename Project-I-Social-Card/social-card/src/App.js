@@ -22,7 +22,7 @@ const App = () => {
     //     </strong>
     //   </p>
     // </div>
-    <div>
+    <div className="tweet">
       <HeaderContainer />
       <CardContainer />
     </div>

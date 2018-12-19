@@ -1,1 +1,9 @@
 /* All styles for your header Components live here */
+.header-container {
+    display: flex;
+}
+
+.header-container .header-content .header-title {
+    display: flex;
+    align-items: center;
+}
