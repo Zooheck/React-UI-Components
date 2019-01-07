@@ -4,6 +4,8 @@ import '../src/components/CardComponents/CardContainer';
 import '../src/components/HeaderComponents/HeaderContainer';
 import HeaderContainer from '../src/components/HeaderComponents/HeaderContainer';
 import CardContainer from '../src/components/CardComponents/CardContainer';
+import Footer from '../src/components/FooterComponents/Footer';
+
 
 const App = () => {
   return (
@@ -25,6 +27,7 @@ const App = () => {
     <div className="tweet">
       <HeaderContainer />
       <CardContainer />
+      <Footer />
     </div>
   );
 };
