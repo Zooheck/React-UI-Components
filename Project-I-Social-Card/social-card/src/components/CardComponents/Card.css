@@ -1,19 +1,15 @@
 /* All styles for your Card Components live here */
 .card-container {
-    position: absolute;
+    
     margin-left: 52px;
 }
 .card-container .card-banner {
     margin-bottom: 15px;
 }
 .card-container .card-banner img {
-    width: 57%;
+    width: 500px;   
+}
 
-}
-.card-container .card-content {
-    padding-left: 15px;
-    width: 57%;
-}
 
 .card-container .card-content h2 {
     font-size: 1.3rem;

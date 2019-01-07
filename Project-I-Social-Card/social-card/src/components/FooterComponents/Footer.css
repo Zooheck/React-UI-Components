@@ -1,0 +1,6 @@
+.footer-content {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
