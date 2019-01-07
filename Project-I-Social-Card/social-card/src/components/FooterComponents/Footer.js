@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react'
 import './Footer.css'
+import FooterButton from './FooterButton'
 
 function Footer() {
     return(
         <div className="footer-content">
-            <p>Comment</p>
-            <p>Retweet</p>
-            <p>Favorite</p>
-            <p>Message</p>
+            <FooterButton buttonText="Comment"/>
+            <FooterButton buttonText="Retweet"/>
+            <FooterButton buttonText="Favorite"/>
+            <FooterButton buttonText="Message"/>
         </div>
                 
     );
