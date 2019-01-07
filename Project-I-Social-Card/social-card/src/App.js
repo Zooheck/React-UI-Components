@@ -6,29 +6,58 @@ import HeaderContainer from '../src/components/HeaderComponents/HeaderContainer'
 import CardContainer from '../src/components/CardComponents/CardContainer';
 import Footer from '../src/components/FooterComponents/Footer'
 
-const App = () => {
-  return (
-    // <div>
-    //   <h3>Welcome to React Social Card!</h3>
-    //   <p>
-    //     Begin by exploring the `components` directory. You'll notice we have a
-    //     few files that we've already included in there to get you started right
-    //     away building components. You'll need to make sure you include your
-    //     components that you build in this file to watch your app come to life
-    //   </p>
-    //   <p>
-    //     <strong>
-    //       Don't forget to `default export` your components and import them here
-    //       inside of this file in order to make them work.
-    //     </strong>
-    //   </p>
-    // </div>
-    <div className="tweet">
-      <HeaderContainer />
-      <CardContainer />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    comment: 0,
+    retweet: 0,
+    favorite: 0,
+    message: 0
+}
+addComment = (event) =>  {
+  event.preventDefault
+  this.setState(previousState => ({
+      comment: previousState.comment += 1
+  }));
+  console.log("Add comment click");
+}  
+addRetweet = (event) => {
+  event.preventDefault
+  this.setState(previousState => ({
+      retweet: previousState.retweet += 1
+  }));
+}
+addFavorite = (event) => {
+  event.preventDefault
+  this.setState(previousState =>
+      ({
+      favorite: previousState.favorite += 1
+  }));
+}
+addMessage = (event) => {
+  event.preventDefault
+  this.setState(previousState =>
+      ({
+      message: previousState.message += 1
+  }));
+}
+  render() {
+    return (
+      <div className="tweet">
+        <HeaderContainer />
+        <CardContainer />
+        <Footer
+        comment={this.state.comment}
+        retweet={this.state.retweet}
+        message={this.state.message}
+        favorite={this.state.favorite}
+        addComment={this.addComment}
+        addRetweet={this.addRetweet}
+        addMessage={this.addMessage}
+        addFavorite={this.addFavorite}
+        />
+      </div>
+    );
+  }
 };
 
 export default App;
