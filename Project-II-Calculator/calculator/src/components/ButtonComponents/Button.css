@@ -2,16 +2,19 @@
     font-size: 60px;
     padding: 10px;
 }
+.zero {
+    text-align: center;
+}
 .number-button {
     background-color: white;
     color: black;
     width: 33.333333%;
     text-align: center;
-    padding: 7px;
     border: 1px solid black;
 }
 .symbol-button {
     background-color: #A0001E;
     color: white;
     text-align: center;
+    border-bottom: 1px solid black;
 }
