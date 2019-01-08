@@ -25,25 +25,36 @@ const symbols = [
 const buttons = ['clear', '/', '7', '8', '9', 'X', '4', '5', '6', '-', '1','2','3','+','0','='];
 
 class App extends React.Component {
-  render() {
+  state = {
+    mathValue: 0,
+    displayValue: 0
+  }
+  buttonClick = (event) => {
+    const buttonValue = event.target.getAttribute("buttonValue");
+    this.setState(previousState => {
+      return {
+      displayValue: `${previousState.displayValue + buttonValue}`
+    }})
+  }
+  render = () => {
     return(
       <div className="app-container">
-        <CalculatorDisplay />
+        <CalculatorDisplay displayValue={this.state.displayValue}/>
         <div className="button-container">
           <div className="number-container">
             <ActionButton buttonText="Clear" />
             <div className="number-buttons">
               {nums.map((num, index) => {
-                return <NumberButton key={index} classNameHandler="number-button" buttonText={num.text} />
+                return <NumberButton buttonValue key={index} onClick={this.buttonClick} classNameHandler="number-button" buttonText={num.text} />
               })}
             </div>
             
-            <ActionButton buttonText="0" />
+            <ActionButton buttonText={0} />
           </div>
           
           <div className="symbol-container">
             {symbols.map((symbol, index) => {
-              return <NumberButton key={index} classNameHandler="symbol-button" buttonText={symbol.text} />
+              return <NumberButton key={index} onClick={this.buttonClick} classNameHandler="symbol-button" buttonText={symbol.text} />
             })}
           </div>
         </div>

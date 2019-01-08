@@ -5,7 +5,7 @@ import './Button.css';
 
 function NumberButton(props) {
     return (
-        <div className={props.classNameHandler}>{props.buttonText}</div>
+        <div buttonValue={props.buttonText} onClick={props.onClick} className={props.classNameHandler}>{props.buttonText}</div>
     );
 }
 
