@@ -3,8 +3,7 @@ import './Display.css';
 
 function CalculatorDisplay(props) {
     return(
-        <div className="calculator-display">
-            
-        </div>
+        <div className="calculator-display">0</div>
     );
 }
+export default CalculatorDisplay

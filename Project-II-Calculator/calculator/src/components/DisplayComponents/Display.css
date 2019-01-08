@@ -1,4 +1,6 @@
 .calculator-display {
-    width: 400px;
-    margin: auto;
+    text-align: right;
+    color: white;
+    background-color: #222222;
+    padding: 15px;
 }

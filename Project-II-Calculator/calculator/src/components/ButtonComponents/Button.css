@@ -1,0 +1,14 @@
+.action-button {
+    font-size: 60px;
+    width: 75%;
+}
+.number-button {
+    background-color: white;
+    color: black;
+    width: 25%;
+}
+.symbol-button {
+    background-color: #A0001E;
+    color: white;
+    width: 25%;
+}
