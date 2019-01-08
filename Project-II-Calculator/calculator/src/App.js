@@ -36,25 +36,31 @@ class App extends React.Component {
       displayValue: `${previousState.displayValue + buttonValue}`
     }})
   }
+  clear = () => {
+    this.setState({
+      mathValue: 0,
+      displayValue: 0
+    })
+  }
   render = () => {
     return(
       <div className="app-container">
         <CalculatorDisplay displayValue={this.state.displayValue}/>
         <div className="button-container">
           <div className="number-container">
-            <ActionButton buttonText="Clear" />
+            <ActionButton buttonText="Clear" onClick={this.clear} />
             <div className="number-buttons">
               {nums.map((num, index) => {
                 return <NumberButton buttonValue key={index} onClick={this.buttonClick} classNameHandler="number-button" buttonText={num.text} />
               })}
             </div>
             
-            <ActionButton buttonText={0} />
+            <ActionButton buttonValue onClick={this.buttonClick} buttonText={0} />
           </div>
           
           <div className="symbol-container">
             {symbols.map((symbol, index) => {
-              return <NumberButton key={index} onClick={this.buttonClick} classNameHandler="symbol-button" buttonText={symbol.text} />
+              return <NumberButton buttonValue key={index} onClick={this.buttonClick} classNameHandler="symbol-button" buttonText={symbol.text} />
             })}
           </div>
         </div>
