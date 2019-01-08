@@ -30,15 +30,18 @@ class App extends React.Component {
       <div className="app-container">
         <CalculatorDisplay />
         <div className="button-container">
-          <div>
+          <div className="number-container">
             <ActionButton buttonText="Clear" />
-            {nums.map((num, index) => {
-            return <NumberButton key={index} classNameHandler="number-button" buttonText={num.text} />
-          })}
+            <div className="number-buttons">
+              {nums.map((num, index) => {
+                return <NumberButton key={index} classNameHandler="number-button" buttonText={num.text} />
+              })}
+            </div>
+            
             <ActionButton buttonText="0" />
           </div>
           
-          <div>
+          <div className="symbol-container">
             {symbols.map((symbol, index) => {
               return <NumberButton key={index} classNameHandler="symbol-button" buttonText={symbol.text} />
             })}

@@ -9,3 +9,15 @@
     flex-direction: row;
     width: 100%;
 }
+.number-container {
+    width: 75%;
+}
+.symbol-container {
+    width: 25%;
+}
+.number-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
