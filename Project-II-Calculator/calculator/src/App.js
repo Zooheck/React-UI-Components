@@ -1,4 +1,5 @@
 import React from 'react';
+import update from 'immutability-helper';
 import './App.css';
 import './components/ButtonComponents/Button.css'
 import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay"
@@ -35,6 +36,33 @@ class App extends React.Component {
       return {
       displayValue: `${previousState.displayValue + buttonValue}`
     }})
+  }
+  doMath = (event) => {
+    const buttonValue = event.target.getAttribute("buttonValue");
+    switch (buttonValue) {
+      case '=':
+        this.calculateOperations()
+        break
+      default:
+        const newMathValue = update(this.state.mathValue, {
+          $push: [buttonValue],
+        }) 
+        this.setState({
+          mathValue: newMathValue
+        })
+        break
+    }
+  }
+  calculateOperations = () => {
+    let result = this.state.mathValue.join('')
+    if (result) {
+      result = Math.eval(result)
+      result = Math.format(result, { precision: 14 })
+      result = String(result)
+      this.setState({
+        mathValue: [result],
+      })
+    }
   }
   clear = () => {
     this.setState({
